@@ -5,6 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "start:dev": "nodemon app.js",
+    "migrate:latest": "knex --knexfile ./database/knexfile.js migrate:latest",
+    "migrate:make": "knex --knexfile ./database/knexfile.js migrate:make",
+    "migrate:rollback": "knex --knexfile ./database/knexfile.js migrate:rollback",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
