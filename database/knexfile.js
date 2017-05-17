@@ -4,7 +4,7 @@ const environment = require ( '../configuration/environment' )()
 const defaultConfiguration = {
   client: 'postgresql',
   connection: process.env.DATABASE_URL,
-  poop: {
+  pool: {
     min: 2,
     max: 10
   },
