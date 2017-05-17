@@ -16,6 +16,12 @@ Will explain what things you need to install the software and how to install the
 Give examples
 ```
 
+#### Install Homebrew
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+#### Install PostgreSQL
+`brew install postgresql`
+
 ### Installing
 
 Will be a step by step series of examples that tell you have to get a development env running
@@ -35,6 +41,33 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 ```
+Create your .env file
+```
+touch configuration/.env.development
+```
+
+Populate your .env file with the connection to your PostgreSQL database.
+```
+echo DATABASE_URL=postgres://`whoami`@localhost:5432/ripple-development >> configuration/.env.development
+```
+
+Install dependencies
+
+`npm i`
+
+Run migrations
+
+`npm run migrate:latest`
+
+You should now see your database populated with the correct tables
+
+Start the app with nodemon
+
+`npm run start:dev`
+
+Visit the page in your browser
+
+`localhost:3000`
 
 ## Running the tests
 
@@ -77,7 +110,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 ## Versioning
 
 ```
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 ```
 
 ## Authors
