@@ -1,0 +1,27 @@
+extends layout
+block content
+  .container-fluid
+    if message.length > 0 
+      .login-error.signup-error=message
+    h1 This is the signup Form 
+    form.signup( action='/users/signup', method='POST' )
+      .form-group
+        label( for='email' ) Email address
+        input.email.form-control( name='email', type='email', placeholder='Enter email' )
+      .form-group
+        label( for='password' ) Password
+        input.password.form-control( name='password', type='password', placeholder='Password' )
+      button( type='submit' ) Submit
+      
+    br
+    br
+      
+    h1 This is the login Form 
+    form.login( action='/users/login', method='POST' )
+      .form-group
+        label( for='email' ) Email address
+        input.email.form-control( name='email', type='email', placeholder='Enter email' )
+      .form-group
+        label( for='password' ) Password
+        input.password.form-control( name='password', type='password', placeholder='Password' )
+      button( type='submit' ) Submit
