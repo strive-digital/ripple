@@ -3,9 +3,9 @@ exports.up = knex =>
   knex.schema.createTable( 'organizations', table => {
     table.increments( 'id' ).primary()
     table.integer( 'user_id' ).notNullable()
-    table.string( 'user_name' ).notNullable()
+    table.foreign( 'user_id' ).references( 'users.id' )
     table.string( 'organization_name' ).notNullable()
-    table.string( 'logo' )
+    table.string( 'logo_url' )
     table.string( 'website' )
     table.timestamps( true, true )
   })

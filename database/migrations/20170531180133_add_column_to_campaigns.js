@@ -1,8 +1,8 @@
 
 exports.up = knex =>
   knex.schema.table( 'campaigns', table => {
-    table.integer( 'organizations_id' ).notNullable()
-    table.foreign( 'organizations_id' ).references( 'organizations.id' )
+    table.integer( 'organization_id' ).notNullable()
+    table.foreign( 'organization_id' ).references( 'organizations.id' )
   })
 
 
