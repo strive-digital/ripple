@@ -4,7 +4,7 @@ exports.up = knex =>
     table.increments( 'id' ).primary()
     table.integer( 'user_id' ).notNullable()
     table.foreign( 'user_id' ).references( 'users.id' )
-    table.string( 'organization_name' ).notNullable()
+    table.string( 'name' ).notNullable()
     table.string( 'logo_url' )
     table.string( 'website' )
     table.timestamps( true, true )
