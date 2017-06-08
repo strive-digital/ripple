@@ -8,5 +8,5 @@ exports.up = knex =>
 
 exports.down = knex =>
    knex.schema.table( 'campaigns', table => {
-    table.dropColumn( 'campaigns' )
+    table.dropColumn( 'organization_id' )
   })
