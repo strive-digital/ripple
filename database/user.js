@@ -1,5 +1,4 @@
-const pgp = require( 'pg-promise' )()
-const db = pgp( process.env.DATABASE_URL )
+const db = require( './db')
 const bcrypt = require( 'bcrypt-nodejs' )
 
 const FIND_BY_EMAIL = 'SELECT * FROM users WHERE email=$1'

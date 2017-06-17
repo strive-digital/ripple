@@ -15,9 +15,9 @@ const webpackHotMiddleware = require( 'webpack-hot-middleware' )
 const webpackConfig = require( './webpack.config.js' )
 const index = require( './routes/index' )
 const user = require( './routes/user' )
+const organizations = require( './routes/organization' )
 
 const compiler = webpack(webpackConfig)
-
 
 app.set( 'views', path.join( __dirname, 'views' ) )
 app.set( 'view engine', 'pug' )
@@ -44,6 +44,7 @@ app.use( flash() )
 
 app.use( '/', index )
 app.use( '/users', user )
+app.use( '/organizations', organizations )
 
 // catch 404 and forward to error handler
 app.use( ( request, response, next ) => {
